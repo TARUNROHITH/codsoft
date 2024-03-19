@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="hospitalsigin.css" rel="stylesheet">
+    <script src="hospitalsignin.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/433a5c3da3.js" crossorigin="anonymous"></script>
+    <title>Apollo Sign In</title>
+</head>
+<body>
+    <div class="navbar">
+
+        <div class="nav-logo border">
+
+            <div class="logo"></div>
+
+        </div>
+
+        <div class="nav-search">
+            <input placeholder="     Find hospital, locations, doctors.....     " class="search-input">
+
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+
+        <nav class="nav-signin border">
+            <p><span>Emergency</span></p>
+            <p class="nav-second">1066</p>
+        </nav>
+        <div class="icon">
+            <i class="fa-regular fa-hospital"></i>
+        </div>
+        <div class="nav-return border" >
+            <p><span>Apollo Lifeline </span></p>
+            <p class="nav-returnsecond">1860-500-1066</p>
+        </div>
+    </div>  
+
+    <div class="container">
+        <div class="form-box">
+            <h1>Sign In</h1>
+            <form onsubmit="return validateSignIn();">
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="Password" />
+                    </div>
+                    <p>Forgot Password?<a href="#">Click Here</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="submit "onclick="signin()">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateSignIn() {
+    var email = document.getElementById("email");
+    var password = document.getElementById("password");
+    
+
+
+    if (email.value.trim() == "") {
+        alert("Blank Email");
+        email.style.border = "3px solid red";
+        return false;
+    } else if (!validateEmail(email.value.trim())) {
+        alert("Invalid Email");
+        email.style.border = "3px solid red";
+        return false;
+    }
+
+    if (password.value.trim() == "") {
+        alert("Blank Password");
+        return false;
+    } else if (!validatePassword(password.value.trim())) {
+        alert("Invalid Password. It should contain at least one uppercase letter, one lowercase letter, one special character, and one number.");
+        return false;
+    }
+
+    return true;
+}
+
+function signin()
+{
+    window.location.href="/Users/tarunrohithkodi/Desktop/Form Vaildation/hospital.html"
+}
+
+
+    </script>
+</body>
+</html>

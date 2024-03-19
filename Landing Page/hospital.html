@@ -1,0 +1,221 @@
+<!-- design  a html page for booking appointment for doctor for apollo hospital using css and js -->
+
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="hospital.css" rel="stylesheet" />
+    <script src="hospital.js" type="text/javascript"></script>
+    <script
+      src="https://kit.fontawesome.com/433a5c3da3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Apollo Appointment</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="nav-logo border">
+        <div class="logo"></div>
+      </div>
+
+      <div class="nav-search">
+        <input
+          placeholder="     Find hospital, locations, doctors.....     "
+          class="search-input"
+        />
+
+        <div class="search-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+
+      <nav class="nav-signin border">
+        <p><span>Emergency</span></p>
+        <p class="nav-second">1066</p>
+      </nav>
+      <div class="icon">
+        <i class="fa-regular fa-hospital"></i>
+      </div>
+      <div class="nav-return border">
+        <p><span>Apollo Lifeline </span></p>
+        <p class="nav-returnsecond">1860-500-1066</p>
+      </div>
+    </div>
+    <div class="background-display">
+      <img src="background-display.jpg" alt="" class="back-image" />
+    </div>
+    <div class="container">
+      <div class="booking-box">
+        <h1>Book an Appointment</h1>
+        <div class="city">
+          <h2>1. Select your City <i class="fa-solid fa-city"></i></h2>
+
+          <select id="citySelect">
+            <option selected disabled>Choose your city</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Amritsar">Amritsar</option>
+            <option value="Aragonda">Aragonda</option>
+            <option value="Bhopal">Bhopal</option>
+            <option value="Bhubaneswar">Bhubaneswar</option>
+            <option value="Bilaspur">Bilaspur</option>
+            <option value="Cochin">Cochin</option>
+            <option value="Gandhinagar">Gandhinagar</option>
+            <option value="Guwahati">Guwahati</option>
+            <option value="Indore">Indore</option>
+            <option value="Kakinada">Kakinada</option>
+            <option value="Karaikudi">Karaikudi</option>
+            <option value="Karim Nagar">Karim Nagar</option>
+            <option value="Karur">Karur</option>
+            <option value="Lucknow">Lucknow</option>
+            <option value="Madurai">Madurai</option>
+            <option value="Mysore">Mysore</option>
+            <option value="Nashik">Nashik</option>
+            <option value="Nellore">Nellore</option>
+            <option value="Noida">Noida</option>
+            <option value="Rourkela">Rourkela</option>
+            <option value="Trichy">Trichy</option>
+            <option value="Visakhapatnam">Visakhapatnam</option>
+            <option value="Warangal">Warangal</option>
+          </select>
+        </div>
+
+        <div class="speciality">
+          <h2>2. Select Speciality</h2>
+          <select id="specialitySelect">
+            <option selected disabled>Choose a speciality</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Oncology">Oncology</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Gynaecology">Gynaecology</option>
+            <option value="Orthopaedics">Orthopaedics</option>
+            <option value="Dermatology">Dermatology</option>
+            <option value="Endocrinology">Endocrinology</option>
+            <option value="Ent">ENT (Ear, Nose, Throat)</option>
+            <option value="GeneralSurgery">General Surgery</option>
+            <option value="Nephrology">Nephrology</option>
+            <option value="Neurosurgery">Neurosurgery</option>
+            <option value="Urology">Urology</option>
+            <option value="Pediatrics">Pediatrics</option>
+            <option value="Psychiatry">Psychiatry</option>
+            <option value="Pulmonology">Pulmonology</option>
+            <option value="Rheumatology">Rheumatology</option>
+            <option value="InternalMedicine">Internal Medicine</option>
+            <option value="RadiationOncology">Radiation Oncology</option>
+          </select>
+        </div>
+
+        <div class="hospital">
+          <h2>3. Select Hospital</h2>
+          <select id="hospitalSelect">
+            <option selected disabled>Choose a speciality</option>
+            <option value="ram nagar">Ram Nagar</option>
+            <option value="Arilova">Arilova</option>
+          </select>
+        </div>
+
+        <div class="doctor">
+          <h2>4. Select Doctor</h2>
+          <select id="doctorSelect">
+            <option selected disabled>Choose a doctor</option>
+            <option value="Psychiatry">Psychiatry</option>
+            <option value="Pulmonology">Pulmonology</option>
+            <option value="Rheumatology">Rheumatology</option>
+            <option value="InternalMedicine">Internal Medicine</option>
+            <option value="RadiationOncology">Radiation Oncology</option>
+          </select>
+        </div>
+
+        <div class="book-appointment">
+          <div class="btn-field">
+            <a href="booking.html"><button type="submit" id="bookBtn">Book</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const data = {
+        Bangalore: {
+          Cardiology: {
+            ApolloHospital: ["Dr. John Doe", "Dr. Jane Smith"],
+            SomeOtherHospital: ["Dr. Mark Johnson"],
+          },
+          Neurology: {
+            AnotherHospital: ["Dr. Emily Brown"],
+          },
+          // need to add specialities and hospitals
+        },
+        // need to add cities as needed
+      };
+
+      function updateSpecialities() {
+        const citySelect = document.getElementById("citySelect");
+        const specialitySelect = document.getElementById("specialitySelect");
+        const hospitalSelect = document.getElementById("hospitalSelect");
+
+        const selectedCity = citySelect.value;
+
+        specialitySelect.innerHTML =
+          "<option selected disabled>Choose a speciality</option>";
+        hospitalSelect.innerHTML =
+          "<option selected disabled>Choose a hospital</option>";
+
+        for (const speciality in data[selectedCity]) {
+          const option = document.createElement("option");
+          option.value = speciality;
+          option.textContent = speciality;
+          specialitySelect.appendChild(option);
+        }
+      }
+
+      function updateHospitals() {
+        const citySelect = document.getElementById("citySelect");
+        const specialitySelect = document.getElementById("specialitySelect");
+        const hospitalSelect = document.getElementById("hospitalSelect");
+
+        const selectedCity = citySelect.value;
+        const selectedSpeciality = specialitySelect.value;
+
+        hospitalSelect.innerHTML =
+          "<option selected disabled>Choose a hospital</option>";
+
+        for (const hospital in data[selectedCity][selectedSpeciality]) {
+          const option = document.createElement("option");
+          option.value = hospital;
+          option.textContent = hospital;
+          hospitalSelect.appendChild(option);
+        }
+      }
+
+      function updateDoctors() {
+        const citySelect = document.getElementById("citySelect");
+        const specialitySelect = document.getElementById("specialitySelect");
+        const hospitalSelect = document.getElementById("hospitalSelect");
+        const doctorSelect = document.getElementById("doctorSelect");
+
+        const selectedCity = citySelect.value;
+        const selectedSpeciality = specialitySelect.value;
+        const selectedHospital = hospitalSelect.value;
+
+        doctorSelect.innerHTML =
+          "<option selected disabled>Choose a doctor</option>";
+
+        const doctors =
+          data[selectedCity][selectedSpeciality][selectedHospital];
+        for (const doctor of doctors) {
+          const option = document.createElement("option");
+          option.value = doctor;
+          option.textContent = doctor;
+          doctorSelect.appendChild(option);
+        }
+      }
+    </script>s
+  </body>
+</html>
